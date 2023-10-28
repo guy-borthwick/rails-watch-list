@@ -1,0 +1,19 @@
+<div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <h1><%= @list.name %></h1>
+</div>
+
+<h2>Bookmarks:</h2>
+
+<% @bookmarks.each do |bookmark| %>
+  <div class="bookmark">
+    <h3><%= bookmark.movie.title %></h3> <!-- Assuming movie has a title attribute -->
+    <p><%= bookmark.comment %></p> <!-- Display the comment for the bookmark -->
+    <%= link_to 'Delete Bookmark',
+      bookmark_path(bookmark),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </div>
+<% end %>
+
+<%= link_to 'Add New Bookmark', new_list_bookmark_path(@list) %> <!-- Link to add a new bookmark -->
+<%= link_to 'Back to Lists', lists_path %>

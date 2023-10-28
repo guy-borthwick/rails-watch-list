@@ -1,0 +1,22 @@
+<div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <h1>Save any kind of Movie</h1>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+     <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>My Lists</h2>
+      <%= link_to 'New List', new_list_path, class: 'btn btn-primary' %>
+    </div>
+    <% @lists.each do |list| %>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white h-100" style="background-image: url('path_to_background_image.jpg'); background-size: cover;">
+          <div class="card-body">
+            <h5 class="card-title"><%= list.name %></h5>
+            <%= link_to 'View List', list_path(list), class: 'btn btn-light' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
