@@ -1,7 +1,9 @@
-<h1>Create a New List</h1>
+<div class="container mt-5">
+  <h1>Create a New List</h1>
 
-<%= form_with(model: @list, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.submit "Create List" %>
-<% end %>
+  <%= form_with(model: @list, local: true) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.submit "Create List" %>
+  <% end %>
+</div>
