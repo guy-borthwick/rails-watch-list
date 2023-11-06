@@ -4,7 +4,7 @@
   <%= form_with(model: @list, local: true) do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
-    <%= f.input :photo, as: :file %>
+    <%= form.file_field :photo %>
     <%= form.submit "Create List" %>
   <% end %>
 </div>
